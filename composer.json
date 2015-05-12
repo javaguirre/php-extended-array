@@ -1,0 +1,24 @@
+{
+    "name": "javaguirre/extended-array",
+    "description": "Extended Array for PHP",
+    "keywords": ["array", "extended"],
+    "homepage": "https://github.com/javaguirre/php-extended-array",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Javier Aguirre",
+            "email": "hello@javaguirre.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=4.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TA\\": "src/"
+        }
+    }
+}
