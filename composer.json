@@ -1,5 +1,5 @@
 {
-    "name": "javaguirre/extended-array",
+    "name": "javaguirre/php-extended-array",
     "description": "Extended Array for PHP",
     "keywords": ["array", "extended"],
     "homepage": "https://github.com/javaguirre/php-extended-array",
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TA\\": "src/"
+            "TA\\ExtendedArray\\": "src/"
         }
     }
 }
