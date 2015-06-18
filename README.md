@@ -1,8 +1,8 @@
-Extended Array for PHP
-===================
+# Extended Array for PHP
 
-Install
--------
+Just a simple extension of the PHP array using [ArrayObject][array_object]
+
+## Install
 
 Edit your composer.json file to require `javaguirre/php-extended-array` and run `composer update`
 
@@ -12,8 +12,53 @@ Edit your composer.json file to require `javaguirre/php-extended-array` and run 
 }
 ```
 
-Usage
------
+## Usage
 
 ```php
+<?php
+
+use TA\ExtendedArray\Type\ExtendedArray;
+
+$fruits = new ExtendedArray(
+    array(
+        'tropical' => 'pineapple',
+        'farm'     => 'strawberry'
+    )
+);
+
+$fruits->has('tropical');
+
+// true
+
+$fruits->hasOne(array('tropical', 'asian'));
+
+// true
+
+$fruits->hasOne(array('tropical', 'asian'));
+
+// false
+
+$fruits->get('canary', 'banana');
+
+// 'banana'
+
+$fruits->get('tropical, 'banana');
+
+// 'pineapple'
+
+$fruits->getSubArray(array('tropical'));
+
+// array('tropical' => 'pineapple');
+
+$fruits->toArray();
+
+// array('tropical' => 'pineapple', 'farm' => 'strawberry');
+
 ```
+
+## LICENSE
+
+[MIT License][license]
+
+[license]: https://github.com/javaguirre/php-extended-array/blob/master/Resources/meta/LICENSE
+[array_object]: https://php.net/manual/en/class.arrayobject.php

@@ -13,8 +13,8 @@ class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
     public function __construct()
     {
         $this->ar = array(
-            'iban'           => 'myiban',
-            'account_holder' => 'aaaaa',
+            'firstkey'  => 'myfirstvalue',
+            'secondkey' => 'my second value',
             'new_key'        => array(
                 'key1' => 'value1',
                 'key2' => 'value2'
@@ -51,8 +51,8 @@ class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
     public function testGetValidKey()
     {
         $this->assertEquals(
-            $this->a->getAll(array('iban'), null),
-            array('iban' => $this->ar['iban'])
+            $this->a->getAll(array('firstkey'), null),
+            array('firstkey' => $this->ar['firstkey'])
         );
     }
 
@@ -75,8 +75,8 @@ class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
     public function testGetOneValidKey()
     {
         $this->assertEquals(
-            $this->a->get('iban', null),
-            $this->ar['iban']
+            $this->a->get('firstkey', null),
+            $this->ar['firstkey']
         );
     }
 
@@ -91,7 +91,7 @@ class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
     public function testHasValidKey()
     {
         $this->assertEquals(
-            $this->a->hasAll(array('iban')),
+            $this->a->hasAll(array('firstkey')),
             true
         );
     }
@@ -115,7 +115,7 @@ class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
     public function testHasOneValidKey()
     {
         $this->assertEquals(
-            $this->a->hasOne(array('account_holder')),
+            $this->a->hasOne(array('secondkey')),
             true
         );
     }
@@ -123,7 +123,7 @@ class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
     public function testHasOneValidOneKey()
     {
         $this->assertEquals(
-            $this->a->hasOne(array('no', 'iban')),
+            $this->a->hasOne(array('no', 'firstkey')),
             true
         );
     }
@@ -131,7 +131,7 @@ class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
     public function testHasOneValidOneKeyDifferentOrder()
     {
         $this->assertEquals(
-            $this->a->hasOne(array('iban', 'no')),
+            $this->a->hasOne(array('firstkey', 'no')),
             true
         );
     }
@@ -147,8 +147,8 @@ class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
     public function testRemoveValidKey()
     {
         $this->assertEquals(
-            $this->a->remove('iban'),
-            $this->ar['iban']
+            $this->a->remove('firstkey'),
+            $this->ar['firstkey']
         );
     }
 
@@ -168,49 +168,49 @@ class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
     public function testGetAccess()
     {
         $this->assertEquals(
-            $this->a['iban'],
-            $this->ar['iban']
+            $this->a['firstkey'],
+            $this->ar['firstkey']
         );
     }
 
     public function testGetAccessObject()
     {
         $this->assertEquals(
-            $this->a->iban,
-            $this->ar['iban']
+            $this->a->firstkey,
+            $this->ar['firstkey']
         );
     }
 
     public function testSetAccess()
     {
         $b = new ExtendedArray($this->a->toArray());
-        $b->set('iban', 'new iban');
+        $b->set('firstkey', 'new firstkey');
 
         $this->assertEquals(
-            $b['iban'],
-            'new iban'
+            $b['firstkey'],
+            'new firstkey'
         );
     }
 
     public function testSetAccessArray()
     {
         $b = new ExtendedArray($this->a->toArray());
-        $b['iban'] = 'new iban';
+        $b['firstkey'] = 'new firstkey';
 
         $this->assertEquals(
-            $b->iban,
-            'new iban'
+            $b->firstkey,
+            'new firstkey'
         );
     }
 
     public function testSetAccessObject()
     {
         $b = new ExtendedArray($this->a->toArray());
-        $b->iban = 'new iban';
+        $b->firstkey = 'new firstkey';
 
         $this->assertEquals(
-            $b['iban'],
-            'new iban'
+            $b['firstkey'],
+            'new firstkey'
         );
     }
 }
