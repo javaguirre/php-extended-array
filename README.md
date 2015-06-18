@@ -34,7 +34,7 @@ $fruits->hasOne(array('tropical', 'asian'));
 
 // true
 
-$fruits->hasOne(array('tropical', 'asian'));
+$fruits->hasAll(array('tropical', 'asian'));
 
 // false
 
