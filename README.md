@@ -44,7 +44,7 @@ $fruits->get('canary', 'banana');
 
 // 'banana'
 
-$fruits->get('tropical, 'banana');
+$fruits->get('tropical', 'banana');
 
 // 'pineapple'
 
