@@ -58,6 +58,21 @@ $fruits->toArray();
 
 ```
 
+## Key access
+
+You can access properties as If it was an object or an array
+
+```php
+$fruits->tropical;
+
+// 'pineapple'
+
+$fruits['tropical'];
+
+// 'pineapple'
+
+```
+
 ## LICENSE
 
 [MIT License][license]
