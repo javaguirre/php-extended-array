@@ -3,7 +3,7 @@
 namespace TA\ExtendedArray\Type;
 
 /**
- * ParamArray is an implementation of
+ * ExtendedArray is an implementation of
  * a request data structure
  */
 class ExtendedArray extends \ArrayObject
