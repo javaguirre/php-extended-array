@@ -1,6 +1,6 @@
 <?php
 
-namespace TA\Type;
+namespace TA\ExtendedArray\Type;
 
 /**
  * ParamArray is an implementation of
@@ -10,6 +10,10 @@ class ExtendedArray extends \ArrayObject
 {
     public function __construct($data = array())
     {
+        if ($data == null) {
+            $data = array();
+        }
+
         parent::__construct(
             $data,
             \ArrayObject::STD_PROP_LIST | \ArrayObject::ARRAY_AS_PROPS
@@ -31,7 +35,7 @@ class ExtendedArray extends \ArrayObject
             return false;
         }
 
-        $countKeys = count($this->_getSubArray($keys));
+        $countKeys = count($this->getSubArray($keys));
 
         return $countKeys == count($keys);
     }
@@ -57,7 +61,7 @@ class ExtendedArray extends \ArrayObject
             return $default;
         }
 
-        $result = $this->_getSubArray($keys);
+        $result = $this->getSubArray($keys);
 
         if (!empty($result)) {
             return $result;
@@ -97,7 +101,7 @@ class ExtendedArray extends \ArrayObject
         $this[$key] = $value;
     }
 
-    private function _getSubArray($keys)
+    public function getSubArray($keys)
     {
         return array_intersect_key(
             $this->toArray(),

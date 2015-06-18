@@ -1,8 +1,8 @@
 <?php
 
-namespace TA\Tests;
+namespace TA\ExtendedArray\Tests;
 
-use TA\Type\ExtendedArray;
+use TA\ExtendedArray\Type\ExtendedArray;
 
 class ExtendedArrayTest extends \PHPUnit_Framework_TestCase
 {
