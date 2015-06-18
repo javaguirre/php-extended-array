@@ -1,5 +1,7 @@
 # Extended Array for PHP
 
+[![Build Status](https://travis-ci.org/javaguirre/php-extended-array.svg)](https://travis-ci.org/javaguirre/php-extended-array)
+
 Just a simple extension of the PHP array using [ArrayObject][array_object]
 
 ## Install
